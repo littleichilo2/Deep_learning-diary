@@ -1,2 +1,2 @@
 # LSTM-diary
-# just a diary about learning and developing LSTM
+just a diary about learning and developing LSTM
