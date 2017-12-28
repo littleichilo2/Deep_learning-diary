@@ -26,3 +26,10 @@ This involves two steps:
     In fact, using this encoding and allowing the model to assume a natural ordering between categories may result in poor performance or unexpected results (predictions halway between categories).
     In this case, a one-hot encoding can be applied to integer representation. This is where the integer encoded cariable is removed and a new binary variable is added for each unique integer value.
     In the 'color' variable example, there are 3 categories and therefore 3 binary variables are needed. A '1' value is placed in the binary variable for the color and '0' values for the other colors.
+    For example:
+    red,  green,  blue
+    1,  0,  0
+    0,  1,  0
+    0,  0,  1
+    The binary variables are often called dummy variables in other fields, such as statistics.
+    
