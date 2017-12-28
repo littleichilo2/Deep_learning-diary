@@ -1,0 +1,26 @@
+#Scaling Series Data in Python 
+There are two types of scaling of your series that you may want to consider: normalization and standardization.
+1.Normalize Series Data
+  Normalization is a rescaling of the data from the original range so that all values are within the range of 0 and 1.
+  Normalization requires that you know or are able to accurately estimate the minimum and maximum observable values. If your time series is trending up or down, estimating these expected values may be difficult and normalization may not be the best method to use on your problem.
+2.Standardize Series Data
+  Standardizing a dataset involves rescaling the distribution of values so that the mean of observerd values is 0 and the standard deviation is 1.
+  This can be thought of as subtracting the meanb value or centering the data.
+  Like normalization, standardization can be useful, and even required in some machine learning algorithms when your data has input values with differing scales.
+  Standardization assumes that your observations fit a Gaussian distribution(bell curve) with a well behaved mean and standard deviation.You can still atandardize your time series data if this expectation is not met, but may not get reliable results.
+#Practical Considerations When Scaling
+1.Estinate Coefficients.
+  You can estimate coefficients (min and max values for normalization or mean and standard deviation for standardization) from the training data.Inspect these firs-cut estimates and use domain knowkedge or domain experts to help improve these estimates so that they will be usefully correct on all data in the future.
+2.Save Coefficients
+  You will need to normalize new data in the future in exactly the way as the data used to train your model. Save the coefficients used to file and load them later when you need to scale new data when making predictions.
+3.Data Analysis
+  Use data analysis to help you better understand your data. For example, a simple histogram can help you quickly get a feeling for the distribution of quandtities to see if standardization would make sense. 
+4.Scale Each Series.
+  If your problem has multiple series, treat each as a separate variable and in turn scale them separately.
+5.Scale At The Right Time.
+  It is important to apply any scaling transforms at the right time. For example, if you have a series of quantities that is non-stationary. It would not be appropriate to scale the series after it has been transformed into a supervised learning problem as each column would be handled differently, which would be incorrect.
+6.Scale if in Doubt.
+  You probably do need to rescale your input and output variables. If in doubt, at least normalize your data.
+
+reference from:
+https://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/
