@@ -21,6 +21,18 @@ There are two types of scaling of your series that you may want to consider: nor
   It is important to apply any scaling transforms at the right time. For example, if you have a series of quantities that is non-stationary. It would not be appropriate to scale the series after it has been transformed into a supervised learning problem as each column would be handled differently, which would be incorrect.
 6.Scale if in Doubt.
   You probably do need to rescale your input and output variables. If in doubt, at least normalize your data.
+  
+#Scaling Input Variables
+  The input varibles are those that the network takes on the input or visible layer in order to make a prediction.
+  Whether input variables require scaling depends on the specifics of your problen and of each variable.
+1.Categorical Inputs
+  You may have a sequence of categorical inputs, such as letters  or statuses.
+  Generally, categorical inputs are first integer encoded then one hot encoded. That is, a unique integer value is assigned to each distinct possibleinput, then a binary vector of ones and zeros is used to represent each integer value.
+  By definition, a one hot encoding will ensure that each input is a small real value, in this case 0.0 or 1.0.
+2.Real-Valued Inputs
+  You may have a sequence of quantities as inputs, such as prices or temperatures.
+  If the distribution of the quantity is normal, then it should be standardized, otherwise the series should be normalized. This applies if the range of quantity values is large(10s 100s,etc.) or small (0.01,0.0001).
+  If the quantity values are small (near 0-1) and the distribution is limited (e.g. standard deviation near 1) then perhaps you can get away with no scaling of the series.
 
 reference from:
 https://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/
