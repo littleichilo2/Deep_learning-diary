@@ -32,4 +32,7 @@ This involves two steps:
     0,  1,  0
     0,  0,  1
     The binary variables are often called dummy variables in other fields, such as statistics.
-    
+#One Hot Encode with scikit-learn
+  We will use the encoders from the scikit-learn library.
+  Specifically, the LabelEncoder of creating an integer encoding od labels and the OneHotEncoder for creating a aone hot encoding of integer encoded values.
+  
