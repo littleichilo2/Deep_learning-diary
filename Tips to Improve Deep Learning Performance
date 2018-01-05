@@ -1,0 +1,113 @@
+Tips to Improve Deep Learning Performance
+1.Improve Performance With Data
+  1)Get More Data.
+    The quality of your models is generally constrained by the quality of your training data. You want the best data you can get for your problem.
+    You also want lots of it.
+    Deep learning and other modern nonlinear machine learning techniques get better with more data. Deep learning especially. It is one of the main points that make deep learning so exciting.
+    More data does not always help, but it can. If I am given the choice, I will get more data for the optionality it provides.
+  2)Invent More Data.
+    If you can't reasonably get more data, you can invent more data.
+    *If your data are images, create randomly modified versions of existing images.
+    *If your data are vectors of numbers, create randomly modified versions of existing vectors.
+    *If your data are text, you get the idea...
+  3)Rescale Your Data
+    This is a quick win.
+    A traditional rule of thumb when working with neural networks is:
+    Rescale your data to the bounds of your activation functions.
+    If you are using sigmoid activation functions, rescale your data to values between 0-and-1. If you’re using the Hyperbolic Tangent (tanh), rescale to values between -1 and 1.
+    This applies to inputs (x) and outputs (y). For example, if you have a sigmoid on the output layer to predict binary values, normalize your y values to be binary. If you are using softmax, you can still get benefit from normalizing your y values.
+    This is still a good rule of thumb, but I would go further.
+    I would suggest that you create a few different versions of your training dataset as follows:
+    *Normalized to 0 to 1.
+    *Rescaled to -1 to 1.
+    *Standardized.
+    Then evaluate the performance of your model on each. Pick one, then double down.
+    If you change your activation functions, repeat this little experiment.
+    Big values accumulating in your network are not good. In addition, there are other methods for keeping numbers small in your network such as normalizing activation and weights, but we’ll look at these techniques later. 
+  4)Transform Your data.
+    Related to rescaling suggested above,but more work.
+    You must really get to know your data. Visualize it. Look for outliers.
+    Gusstimate the univariate distribution of each column.
+    *Does a column look like a skewed Gaussian, consider adjusting the skew with a Box-Cox transform.
+    *Does a column look like it has some features, but they are being clobbered by something obvious, try squaring, or square-rooting.
+    *Does a column look like an exxponential distribution, consider a log transform.
+    *Can you make a feature discrete or binned in some way to better emphasize.
+    Lean on your intuition. Try things.
+    *Can you pre-process data with a projection method PCA?
+    *Can you aggregate multiple attributes into a single value?
+    *Can you expose some interesting aspect of the problem with a new boolean flag?
+    *Can you explore temporal or other structure in some other way?
+    Neural nets perform feature learning. They can do this stuff.
+    But they will also learn a problem much faster if you can better expose the structure of the problem to the network for learning.
+    Spot-check lots of different transforms of your data or of specific attributes and see what works and what doesn’t.
+  5)Feature Selection
+    Neural nets are generally robust to unrelated data.
+    They’ll use a near-zero weight and sideline the contribution of non-predictive attributes.
+    Still, that’s data, weights, training cycles used on data not needed to make good predictions.
+    Can you remove some attributes from your data?
+    There are lots of feature selection methods and feature importance methods that can give you ideas of features to keep and features to boot.
+    Try some. Try them all. The idea is to get ideas.
+    Again, if you have time, I would suggest evaluating a few different selected “Views” of your problem with the same network and see how they perform.
+    *Maybe you can do as well or better with fewer features. Yay, faster!
+    *Maybe all the feature selection methods boot the same specific subset of features. Yay, consensus on useless features.
+    *Maybe a selected subset gives you some ideas on further feature engineering you can perform. Yay, more ideas. 
+  6)Reframe Your Problem.
+    Step back from your problem.
+    Are the observations that you’ve collected the only way to frame your problem?
+    Maybe there are other ways. Maybe other framings of the problem are able to better expose the structure of your problem to learning.
+    I really like this exercise because it forces you to open your mind. It’s hard. Especially if you’re invested (ego!!!, time, money) in the current approach.
+    Even if you just list off 3-to-5 alternate framings and discount them, at least you are building your confidence in the chosen approach.
+    *Maybe you can incorporate temporal elements in a window or in a method that permits timesteps.
+    *Maybe your classification problem can become a regression problem, or the reverse.
+    *Maybe your binary output can become a softmax output?
+    *Maybe you can model a sub-problem instead.
+    It is a good idea to think through the problem and it’s possible framings before you pick up the tool, because you’re less invested in solutions.
+    Nevertheless, if you’re stuck, this one simple exercise can deliver a spring of ideas.
+    Also, you don’t have to throw away any of your prior work. See the ensembles section later on. 
+2.Improve Performance With Algorithms
+  Machine learning is about algorithms.
+  All the theory and math descrives differents approached to learn a decision process from data (if we constrain ourselves to predictive modeling).
+  You’ve chosen deep learning for your problem. Is it really the best technique you could have chosen?
+  In this section, we’ll touch on just a few ideas around algorithm selection before next diving into the specifics of getting the most from your chosen deep learning method.
+  Here’s the short list
+  1.Spot-Check Algorithms.
+  2.Steal From Literature.
+  3.Resampling Methods.
+  Let’s get into it.
+  1)Spot-Check Algorithms
+    Brace yourself.
+    You cannot know which algorithm will perform best on your problem beforehand.
+    If you knew, you probably would not need machine learning.
+    What evidence have you collected that your chosen method was a good choice?
+    Let's flip this conunfrum.
+    No single algorithm can perform better than any other, when performance is averaged across all possible problems. All algorithms are equal. This is a summary of the finding form the no free lunch theorem.
+
+    Maybe your chosen algorithms is not the best for yout problem.
+
+    Now, we are not trying to solve all possible problems, but the new hotness in algorithm land may not be the best choice on your specific dataset.
+    My advice is to collect evidence. Entertain the idea that there are other food algorithms and given them a fair well and which do not.
+    Spot-check a suite of top methods and see which fair well and which do not.
+    *Evaluate some linear methods like logistic regression and linear discriminate analysis.
+    *Evaluate some tree methods like CART, Random Forest and Gradient Boosting.
+    *Evaluate some instance methods like SVM and kNN.
+    *Evaluate some other neual network methods like LVQ,MLP,CNN,LSTM,hybrids,etc.
+    Double down on the top performers and improve their chance with some further tuning or data preparation.
+    Rank the results against your chosen deep learning method, how do they compare?
+    Maybe you can drop the deep learning model and use something a lot simpler, a lot faster to trainm even something that is easy to understand.
+  2)Steal From Literature
+    A great shortcut to picking a good method, is to steal ideas from literature.
+    Who else has worked on a problem like yours and what methods did they use.
+    Check papers, books, blog posts,Q&A sites, tutorials, everything Google throws at you.
+    Write down all the ideas and work your way through them.
+    This is not about replicating research, it is about new ideas that you have not thought of that may give you a lift in performance.
+    
+    Published research is highly optimized.
+    
+    There are a lot of smart people writing lots of interesting things. Mine this great library for nuggets you need.
+    
+  
+  
+  
+  
+  
+  
