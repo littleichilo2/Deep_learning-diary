@@ -104,10 +104,23 @@ Tips to Improve Deep Learning Performance
     Published research is highly optimized.
     
     There are a lot of smart people writing lots of interesting things. Mine this great library for nuggets you need.
+  3)Resamplng Methods
+    You must know how good your models are.
+    Is your estimate of the performance of your models reliable?
+    Deep learning methods are slow to train.
+    This ofter means we cannot use glod standard methods to estimate the performace od the model such as k-fold cross validation.
+    *Maybe you are using a simple train/test split, this is very common. If so, you need to ensure that the split is representative of the problem. Univariate stats and visualization are a good start.
+    *Maybe you can exploit hardware to improve the estimates. For example, if you have a cluster or an Amazon Web Services account, we can train n-models in parallel then take the mean and standard deviation of the results to get a more robust estimate.
+    *Maybe you can use a validation hold out set to get an idea of the performance of the model as it trains (useful for early stopping, see later).
+    *Maybe you can hold back a completely blind validation set that you use only after you have performed model selection.
+    Going the other way, maybe you can make the dataset smaller and use stronger resampling methods.
+    *Maybe you see a strong correlation with the performance of the model trained on a sample of the training dataset as to one trained on the whole dataset. Perhaps you can perform model selection and tuning using the smaller dataset, then scale the final technique up to the full dataset at the end.
+    *Maybe you can constrain the dataset anyway, take a sample and use that for all model development.
     
-  
-  
-  
+    You must have complete confidence in the performance estimates of your models.
+    
+3.Improve Performance With Algorithm Tuning
+
   
   
   
