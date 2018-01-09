@@ -120,7 +120,57 @@ Tips to Improve Deep Learning Performance
     You must have complete confidence in the performance estimates of your models.
     
 3.Improve Performance With Algorithm Tuning
-
+  1)Diagnostics
+    You will get better performance if you know why performance is no longer improving.
+    Is your model overfitting or underfitting?
+     
+    Always keep this question in mind. Always.
+    
+    It will be doing one or the other, just by varying degrees.
+    A quick way to get insight into the learning behavior of your model is to evaluate it on the training and a validation dataset each epoch, and plot the results.
+    *If training is much better than the validation set, you are probably overfitting and you can use techniques like regularization.
+    *If training and validation are both low, you are probably underfitting and you can probably increase the capacity of your network and train more or longer.
+    *If there is an inflection point when training goes above the validation, you might be able to use eary stopping.
+    Create these plots often and study them for insight into the different techniques you can use to improve performance.
+    
+    These plots might be the most valuable diagnostics you can create.
+    
+    Another useful diagnostic is to study the observations that the network gets right and wrong.
+    On some problems, this can give you ideas of things to try.
+    *Perhaps you need more or augmented examples of the difficult-to-train on examples.
+    *Perhaps you can remove large samples of the training dataset that are wasy to model.
+    *Perhaps you can use specialized models that focus on different clear regions of the input space.
+  2)Weight Initialization
+    The rule of thumb used to be:
+    
+    Initializa using small random numbers.
+  
+    In practice, that is still probably good enoughl. But is it the best for your network?
+    There are also heuristics for different activation functions, but I don't remeber seeing much difference in practice.
+    Keep your network fixed and try each initialization scheme.
+    Remember, the weights are the actual parameters if your modelthat your are trying to find.There are many sets of weights that give good performance , but you want better performace
+    *Try all the different initilization methods offered and see if one is better with all else held constant.
+    *Try pre-learning with an unsupervised method like an autoencoder.
+    *Try taking an existing and retraining a new input and output layer for your problem(transder learning)
+    
+    Remember, changing the weight initialization method is closely tied with the activation function and even the optimization function.
+    
+  3)Learning Rate
+    There is often payoff in tuning the learning rate.
+    Here are some ideas id things to explore:
+    *Experiment with very large and very small learning rates.
+    *Grid search common learning rate values from the literature and see how far you can push the network.
+    *Try a learning rate that decreases over epochs.
+    *Try a learning rate that drops every fixed number of epochs by a percentage.
+    *Try adding a momentum term then grid search learning rate and momebtum together.
+    Larger networks need more trainin, and the reverse. If you add more neurons or more layers, increase your learning rate.
+    Learning rate is coupled with the number of training epochs, batch size and optimization method. 
+    
+    
+    
+    
+    
+    
   
   
   
