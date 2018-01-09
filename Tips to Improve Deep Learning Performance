@@ -165,6 +165,28 @@ Tips to Improve Deep Learning Performance
     *Try adding a momentum term then grid search learning rate and momebtum together.
     Larger networks need more trainin, and the reverse. If you add more neurons or more layers, increase your learning rate.
     Learning rate is coupled with the number of training epochs, batch size and optimization method. 
+  4)Activation Functions
+    You probably should be using rectifier activation functions.
+    They just work better.
+    Before that it was sigmoid and tanh, then a softmax, linear or sigmoid on the output layer. I don't recommend trying more than that unless you know what you're doing.
+    Try all three though and rescale your data to meet the bounds of the functions.
+    Obviously, you want to choose the right transfer function for the form of your output, but consider exploring different representations.
+    For example, switch your sigmoid for binary classification to linear for a regression problem, then post-process your outputs. This may also require changing the loss function to something more appropriate. See the section on Data Transforms for more ideas aling these lines.
+  5)Network Topology
+    Changes to your network structure will pay off.
+    How many layers and how many neurons do you need?
+    No one knows. No one. Don't ask.
+    You must discover a good configuration for your problem. Experiment.
+    *Try one hidden layer with a lot of neurons.
+    *Try  a deep network with few neurons per layer(deep).
+    *Try conbinations of the above.
+    *Try architectures form recent papers on problems similar to yours.
+    *Try topology patterns (fan out then in) and rules of thumb from books and papers.
+    It's hard.
+    Larger networks have a greater representational capability, and maybe you need it.
+    More layers offer more opportunity for hierarchical re-composition of abstract features learned form the data. Maybe you need that.
+    Later networks need more training, both in epochs and in learning rate.
+    Adjust accordingly.
     
     
     
