@@ -1,0 +1,7 @@
+Both overfitting and underfitting can lead to poor model performance.But by far the most common problem in applied learning is overfitting.
+Overfitting is such a problem because the evaluation of machine learning algorithms on training data is different from the evaluation we actually care the most about, namely how well the algorithm performs on unseen data.
+There are two important techniques that you can user when evaluating machine learning algorithms to limit overfitting:
+  1.Use a resampling techdnique to estimate model accuracy.
+  2.Hold back a validation dataset.
+The most popular resampling technique is k-fold cross validation. It allows you to train and test your model k-times on different subsets of training data and bulid up an estimate od the performance of a machine learning model on unseen data.
+Using cross validation is a gold standard in applied machine learning for estimating model accuracy on unseen data. If you are looking to learn more about generalization, overfitting and underfitting in machine.
