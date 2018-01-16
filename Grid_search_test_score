@@ -12,5 +12,6 @@ KerasDeeplearning
     return model
   Epochs above 800 work better.
   batchsize perform well in 160 between 640.
+  dropout_rate 0.8
   
   
