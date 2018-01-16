@@ -10,8 +10,13 @@ KerasDeeplearning
     model.add(Dense(1,kernel_initializer='normal',activation='relu'))
     model.compile(loss='mean_squared_error',optimizer='adam')
     return model
-  Epochs above 800 work better.
-  batchsize perform well in 160 between 640.
-  dropout_rate 0.8
-  
+  Epochs
+  Batchsize
+  dropout_rate 
+  weight_constraint
+  learn_rate
+  momentum
+  activation
+  init_mode
+  neurons
   
