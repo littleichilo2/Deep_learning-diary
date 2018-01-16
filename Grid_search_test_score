@@ -1,5 +1,4 @@
 KerasDeeplearning
-  from Deeplearning20180116_batchsize_epochs
   models:
     model=Sequential()
     model.add(Dense(1000,input_dim=10,kernel_initializer='normal',activation='relu',kernel_constraint=maxnorm(3)))
@@ -11,6 +10,7 @@ KerasDeeplearning
     model.add(Dense(1,kernel_initializer='normal',activation='relu'))
     model.compile(loss='mean_squared_error',optimizer='adam')
     return model
-  Epochs in range(10~50) work better
-  batchsize perform well in 40 and 2560
+  Epochs above 800 work better.
+  batchsize perform well in 160 between 640.
+  
   
