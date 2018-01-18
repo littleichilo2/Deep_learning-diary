@@ -16,7 +16,7 @@ KerasDeeplearning
   weight_constraint
   learn_rate
   momentum
-  activation
+  activation:softplus
   init_mode
   neurons
   
