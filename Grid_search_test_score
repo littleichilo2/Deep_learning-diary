@@ -5,8 +5,8 @@ KerasDeeplearning
     model.add(Dense(1,kernel_initializer='normal',activation='sigmoid'))
     model.compile(loss='mean_squared_error',optimizer='adam')
     return model
-  Epochs
-  Batchsize
+  Epochs:3000
+  Batchsize:2560
   dropout_rate 
   weight_constraint
   learn_rate
