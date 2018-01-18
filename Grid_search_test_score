@@ -1,13 +1,8 @@
 KerasDeeplearning
   models:
     model=Sequential()
-    model.add(Dense(1000,input_dim=10,kernel_initializer='normal',activation='relu',kernel_constraint=maxnorm(3)))
-    model.add(Dropout(0.2))
     model.add(Dense(100,kernel_initializer='normal',activation='relu'))
-    model.add(Dropout(0.2))
-    model.add(Dense(10,kernel_initializer='normal',activation='relu'))
-    model.add(Dropout(0.2))
-    model.add(Dense(1,kernel_initializer='normal',activation='relu'))
+    model.add(Dense(1,kernel_initializer='normal',activation='sigmoid'))
     model.compile(loss='mean_squared_error',optimizer='adam')
     return model
   Epochs
