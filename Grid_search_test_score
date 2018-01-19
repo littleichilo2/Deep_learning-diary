@@ -1,9 +1,13 @@
 KerasDeeplearning
   models:
     model=Sequential()
+    model.add(Dropout(0.1,input_shape=(10,)))
     model.add(Dense(100,kernel_initializer='uniform',activation='relu'))
-    model.add(Dense(neurons,kernel_initializer='uniform',activation='softplus'))
-    model.add(Dense(neurons2,kernel_initializer='uniform',activation='softplus'))
+    model.add(BatchNormalization())
+    model.add(Dense(10,kernel_initializer='uniform',activation='softplus'))
+    model.add(BatchNormalization())
+    model.add(Dense(100,kernel_initializer='uniform',activation='softplus'))
+    model.add(BatchNormalization())
     model.add(Dense(1,kernel_initializer='normal',activation='sigmoid'))
     model.compile(loss='mean_squared_error',optimizer='adam')
     return model
