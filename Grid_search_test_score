@@ -2,6 +2,8 @@ KerasDeeplearning
   models:
     model=Sequential()
     model.add(Dense(neurons,kernel_initializer='normal',activation='relu'))
+    model.add(Dense(neurons,kernel_initializer='uniform',activation='softplus'))
+	  model.add(Dense(neurons2,kernel_initializer='uniform',activation='softplus'))
     model.add(Dense(1,kernel_initializer='normal',activation='sigmoid'))
     model.compile(loss='mean_squared_error',optimizer='adam')
     return model
