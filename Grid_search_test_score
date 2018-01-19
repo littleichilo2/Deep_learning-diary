@@ -9,9 +9,9 @@ KerasDeeplearning
   Batchsize:2560
   dropout_rate: 0.0
   weight_constraint:4
-  learn_rate
-  momentum
+  learn_rate:adam
+  momentum:adam
   activation:softplus
-  init_mode
+  init_mode:uniform
   neurons:100
   
