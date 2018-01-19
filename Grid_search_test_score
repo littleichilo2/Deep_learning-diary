@@ -7,7 +7,7 @@ KerasDeeplearning
     return model
   Epochs:3000
   Batchsize:2560
-  dropout_rate: 0.0
+  dropout_rate: 0.1
   weight_constraint:4
   learn_rate:adam
   momentum:adam
