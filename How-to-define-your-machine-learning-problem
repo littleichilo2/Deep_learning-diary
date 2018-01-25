@@ -34,5 +34,5 @@ Step 3:How would I solve the problem?
   List out step-by-step what data you would collect, how you would prepare it and how you would design a program to solve the problem. This may include prototypes and experiments you would need to perform which are a gold mine because they will highlight questions and uncertainties you have aobut the domain that could be explored.
   This is a power tool. It can highlight problems that actually can be solved satisfactorily using a manully implemented solution. It also flushed out important domain knowledge that has been trapped up until now like where the data is actually stored, what types of features would be useful and many other details.
   Collect all of these details as they occur to you and update the previous sections of the problem definition. Especially the assumptions and rules of the thumb.
-    
+  We have considered a manually specified solution before when describing complex problems in why machine learning matters.  
     
