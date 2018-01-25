@@ -1,0 +1,19 @@
+The data for your sequence prediction problem probably needs to be scaled when training a neural network, such as a Long Short-Term Memory recurrent network.
+Scaling Input Variables
+  The input variables are those that the network takes on the input or visible layer in order to make a prediction.
+  A good rule of thumb is that input variables should be small values, probably in the range of 0-1 or standardized with a zero mean and a standard deviation of one.
+  Whether input variables require scaling depends on the specifics of your problem and of each variable. Let's look at some examples.
+Categorical Inputs 
+  You may have a sequence of cvategorical inputs, such as letters or statuses.
+  Generally, categorical inputs are first integer encoded then one hot encoded. That is, a unique integer value is assigned to each distinct possible input, then a binary vector of ones and zeros is used to represent each integer value.
+  By definition, a one hot encoding will ensure that each input is a small real value, in this case 0.0 or 1.0.
+Real-Valued Inputs
+  You may have a sequence of quantities as inputs, such as prices or temperatures.
+  If the distribution of the quantity is normal, then it should be standardized, otherwise the series should be normalized. This applies if the range of quantity values is large (10s 100s,etc.)or small (0.01,0.0001).
+  If the quant values are small (near 0-1) and the distribution is limited (e.g. standard deviation near 1) then perhaps you can get away with no scaling of the series.
+Other Inputs
+  Problems can be complex and it may not be clear how to best scale input data.
+  If in doubt, normalize the input sequence. If you have the resources, explore modeling woth the raw data, standardized data , and normalized and see if there is a beneficial difference.
+Scaling Output Variables
+  The output variable is the variable predicted by the network.
+  You must ensure that the scale of your output variable matches the scale of the activation function (transfer function) on the output layer of your network.
