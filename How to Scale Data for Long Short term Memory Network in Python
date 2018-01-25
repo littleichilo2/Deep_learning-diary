@@ -17,3 +17,10 @@ Other Inputs
 Scaling Output Variables
   The output variable is the variable predicted by the network.
   You must ensure that the scale of your output variable matches the scale of the activation function (transfer function) on the output layer of your network.
+  If your output activation function has range of [0,1], then obviously you must ensure that the target values lie within that range. But it is generally better to choose an output activation function suited to the distribution of the targets than to force your data to conform to the output activation function.
+Binary Classification Problem
+  If your problem is a binary classifivtion problem, then the output will be class values 0 and 1. This is best modeled with a sigmoid activation function on the output layer. Output values will be real values between 0 and 1 that can be snapped to crisp values.
+Multi-class Classification Problem
+  If your problem is a multi-class classification problem, then the output will be a vector of binary class values between 0 and 1, one output per class value. This is best modeled with a softmax activation function on the output layer. Again, output values will be real values between 0 and 1 that can be snapped to crisp values.
+Regression Problem
+  If your problem is a regression problem, then the output will be a real value, This is best modeled with linear activation function. If the distribution of the value is normal, then you can standardized the output variable. Otherwise ,the output variable can be normalized.
