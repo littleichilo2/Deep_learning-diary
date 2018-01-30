@@ -38,4 +38,15 @@ Feature Selection Tutorials and Recipes
       
       If we adopt the proper procedure, and perform feature selection in each fold, there is no longer any information about the held out cases in the choice of features used in that fold.
       
-    The reason is that the decisions made to select the features were made on the entire training set, that in turn
+    The reason is that the decisions made to select the features were made on the entire training set, that in turn are passed onto the model. This may cause a mode a model that is enhanced by the selected features over other models being tested to get seemingly better results, when in fact it is biased result.
+    
+      If you perform feature selection on all of the data and then cross-validate, then the test data in each fold of the cross-validation procedure was also used to choose the features and this is what biases the performance analysis.
+  Feature Selection Checklist
+    Isabelle Guyon and Andre Elisseeff the authors of "An Introdution to Variable and Feature Selection" provide an excellent checklist that you can use the next time you need to select data features for you predictive modeling problem.
+    I have reproduced the salient parts of the checklist here:
+      Do you have domain knowledge? If yes, construct a better set of ad hoc feature.
+    2.Are your features commensurate? If no, consider normalizing them.
+    3.Do you suspect interdependence of features? If yes, expand your feature set by constructing conjunctive features or products of features, as much as your computer resources allow you.
+    4.Do you need to prune the input variables(e.g. for cost, speed or data understanding reasons)?If no, construct disjunctive features or weighted sums of feature.
+      
+      
