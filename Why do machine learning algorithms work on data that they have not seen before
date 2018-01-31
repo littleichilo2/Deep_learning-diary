@@ -27,3 +27,16 @@ Generalization is Hard, but Powerful
   It is the speed and scale with which these automated generalization machines operate that is what is so exciting in the field of machine learning.
 We Prefer Simpler models
   The machine learning model is the result of the automated generalization procedure called the machine learning algorithm.
+  The model could be said to be a generalization of the mapping from training inputs to training outputs.
+  There may be many ways to map inputs to outputs for a specific problem and we can navigate ways by testing different algorithms, different algorithm configurations, different training data, and so on.
+  We cannot know which approach will result in the most skillful model beforehand, therefore we must test a suite of approaches, configurations, and framings of the problem to discover what works and what the limits of learning are on the problem before selecting a final model to use.
+  The skill of the model at making predictions determines the quality of the heberalization and can help as a guide during the model selection process.
+  Out of the millions of possible mappings, we prefer simpler mappings over complex mappings. Put another way, we preder the simplest possible hypothesis that explains the data. THis is one way to choose the best performing and comes from Occam's razor.
+  The simpler model is often (but not always) easier to understand and maintain and is more robust. In practice, you may want to choose the best performing simiplest model.
+Machine Learning is Not for Every Problem
+  The ability to automatically learn by genernalization is powerful, but is not suitable for all problems.
+  *Some problems require a precise solution, such as arithmetic on a bank account balance.
+  *Some problems can be solved bty generalization, but simpler solutions exist, such as calculating the square root of positive numbers.
+  *Some problems look like they could be solved by generalization but there exists no structured underlying relationship to generalize from the data, or such a function is too complex, such as prediction security prices.
+  Key to the effective use of machine learning is learning where it can and cannot (or should not) be used.
+  Sometimes this is obvious, but often it is not. Again, you must use experience and experimentation to help tease out whether a problem is a good fit for being solved by generalization.
