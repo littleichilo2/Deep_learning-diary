@@ -14,4 +14,16 @@ What do machine learning algorithms do?
   We are training the mdoel to make predictions in the future given inputs for cases where we do not have the outputs. Where the outputs are unknown. This requires that the algorithm learn in general how to take observations form the domain and make a prediction, not just the specifics of the training data.
   This is called generalization.
 Generalization is Hard, but Powerful
-  A machine learning algorithm must 
+  A machine learning algorithm must generalize training data to the entire domain of all unseen observations in the domain so that it can make accurate predictions when you user the model.
+  This is really hard.
+  This approach of generalization requires that the data that we use to train the model is a good and reliable sample of the qualiry and the more representative, the easier it will be for the model to learn the unknown and underlying "true" mapping that exists from inputs to outputs.
+  To generalize means to go from something specific to something broad.
+  It's the way humans we learn.
+  *We don't memorize specific roads when we learn to drive; we learn to drive in general so that we can drive on any road or set of conditions.
+  *We don't memorize specific computer when learning to code; we learn general ways to solve problems with code for any business case that might com,out
+  *We don't memorize the specific word order in nartural language; we learn general meanings for words and put themin new sequence as needed.
+  THe list could go on.
+  Machine learning algorithms are procedures to automatically generalize from historical observations. And they can generalize on more data than a human could consider, faster than a human could consider it.
+  It is the speed and scale with which these automated generalization machines operate that is what is so exciting in the field of machine learning.
+We Prefer Simpler models
+  The machine learning model is the result of the automated generalization procedure called the machine learning algorithm.
