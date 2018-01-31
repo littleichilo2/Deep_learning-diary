@@ -1,0 +1,17 @@
+The supepower of machine learning is generalization.
+  In this post, you will discover generalization, the superpower of machine learning.
+What do machine learning algorithms do?
+  When we fit a machine learning algorithm, we quire a training dataset.
+  This training dataset includes a set of input patterns and the corresponding output patterns. The goal of the machine learning algorithm is to learn a reasonable approximation of the mapping from input patterns to output patterns.
+  Here are some examples to make this concrete:
+  *Mapping from emails to whether they spam or not for email spam classification.
+  *Mapping from house details to house sale price for house sale price regression.
+  *Mapping from photograph to text to describe the photo in photo caption generation.
+  The list could go on.
+  We can summarize this mapping that machine learning algorithms learn as a function(f) that predicts the output(y) given the input (X), or restated.
+    y=f(x)
+  Our goal in fitting the machine learning algorithms is to get the best possible f() for our purposes.
+  We are training the mdoel to make predictions in the future given inputs for cases where we do not have the outputs. Where the outputs are unknown. This requires that the algorithm learn in general how to take observations form the domain and make a prediction, not just the specifics of the training data.
+  This is called generalization.
+Generalization is Hard, but Powerful
+  A machine learning algorithm must 
