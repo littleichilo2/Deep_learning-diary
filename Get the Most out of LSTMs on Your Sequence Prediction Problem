@@ -1,0 +1,41 @@
+Long Short-Term Memory (LSTM) Recurrent Neural Networks are a powerful type of deep learning suited for sequence prediction problems.
+A possible concern when using LSTMs is if the added complexity of the model is improving the skill of your model or is in fact resulting in lower skill than simpler models.
+In this post, you will discover simple experiments you can run to ensure you are getting the most out of LSYMs on your sequence prediction problem.
+After reading this post, you will know:
+  *How to test if your model is exploiting order dependence in your input data.
+  *how to test if your model is harnessing memory in your LSTM model.
+  *How to test if your model is harnessing BPTT when fitting your model.
+  
+3 Capabilities of LSTMS
+  The LSTM recurrent neural network has a few key capabilities that give the method its impressive power on a wide range of sequence prediction problems.
+  Without diving into the theory of LSTMs,we can summarize a few discrete behaviors of LSTNs that we can configure in out models:
+    *Order dependence. Sequence prediction problems require an ordering between observations, whereas simpler supervised learning problems do not, and this order can be randomized prior to training and prediction. A sequence prediction problem can be transformed into the simpler form by randomizing the order of observations.
+    *Memory. LSTMs hava an internal memory across observations in input sequences, whereas simple neural networks like Multilayer Perceptrons do not. LSTMs can lose this memory by resetting the internal state after each input observation.
+    *BPTT. Recurrent neural networls user a training algorithm that estimates the direction of weight updates across all time steps of an input sequence, whereas other types of networks are limited to single samples(excluding averaging across batched of inputs in both cases).LSTMs can disregard the error contribution from prior timesteps in gradient estimates by working with sequences of one observation in length.
+  These three capabilities and their configurability to a simpler form provide the basis for 3 experiments you can perform to see exactly what properties of the LSTMs that you can and are harnessing on your sequence prediction problem.
+
+1.Are You Exploiting Order Dependence?
+  A key feature sequence prediction problems is that there is an order dependence between observations.
+  That is ,the order of observations matters.
+  Assumption: The order of observations is expected to be important in making predictions on sequence prediction problems.
+  You can check if this assumption is true by developing a baseline of performance with a model that only takes the prior observation as input and shuffles the training and test datasets.
+  This could be achieved a number of ways. Two example implementations include:
+    *A Multilayer Perceptron with shuffled training and test sets.
+    *An LSTM with shuffled training and test sets with updates and state resets after each sample.
+  Test:If order dependence is important to the prediction  problem, then a model that exploits order between observations in each input sequence and across input sequence should achieve better performance than a model that does not.
+
+2.Are You Exploiting LSTM Memory
+  A key capability of LSTMs is that they can remember over long input sequences.
+  That is, each memory unit maintains an internal state that may be thought of as local variables that are used when making predictions.
+  Assumption: The internal state of the model is expected to be important to model skill.
+  You can check if this assumption is true by developing a baseline of performanve with model that has no memory from one sample to the next.
+  This can be achieved by resetting the interal state of the LSTM after each observation.
+  TEST: If internal memory is important to the prediction problem, then a model that possesses memory across observations in an input sequence should achieve better performance than a model that does not.
+  
+3.Are You Exploiting Backpropagation Through Time?
+  A key to the way recurrent neural networks are trained is the Backpropagation through time algorithm.
+  This algorithm allows the gradient of weight updates to be estimated from all observations in the sequence (or a subset in the case of truncated BPTT).
+  Assumption: The BPTT weight update algorith, is expected to be important to model skill on sequence prediction problems.
+  You can check if this assumption is true by developing a baseline of performance where gradient estimates are based on a single timestep.
+  This can achieved by splitting input sequences so that each observation represents a single input sequence. This would be independent of when internal state is reset.
+  Test: If BPTT is important to the prediction problem, then a model that estimates the gradient for weight updates for multiple time steps should achieve better performance than a model that uses a single time step.
