@@ -1,9 +1,15 @@
 Gaussian Naive Bayes (GNB)
+
   Bayes' theorem:条件付き確率に関して成り立つ定理
+  
                   P(B|A)=P(A|B)P(B)/P(A)->P(B|A1,A2...,An)=P(B)P(A1,...,An|B)/P(A1,...,An)
+                  
   Gaussian Naive Bayes->
+  
     P(xi|y)=1*exp(-(xi-miu(y))^2/2sigma(y)^2)/root(2pi*sigma(y)^2)（正規分布の連続密度分布）
+  
   Used in classification
+
 Bernoulli Naive Bayes (BNB)
   There may be multiple features but each one is assumed to be a binary-valued (Bernoulli, boolean) variable.If handed any other kind of data, a BernoulliNB instance may binarize its input.
   BenoulliNB might perform better better on some datasets, especially those with shorter documents.
