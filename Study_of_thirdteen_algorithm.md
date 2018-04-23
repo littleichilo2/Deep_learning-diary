@@ -3,10 +3,7 @@ Gaussian Naive Bayes (GNB)
                   P(B|A)=P(A|B)P(B)/P(A)->P(B|A1,A2...,An)=P(B)P(A1,...,An|B)/P(A1,...,An)
   Gaussian Naive Bayes->
     P(xi|y)=1*exp(-(xi-miu(y))^2/2sigma(y)^2)/root(2pi*sigma(y)^2)（正規分布の連続密度分布）
-    
   Used in classification
-              
-
 Bernoulli Naive Bayes (BNB)
   There may be multiple features but each one is assumed to be a binary-valued (Bernoulli, boolean) variable.If handed any other kind of data, a BernoulliNB instance may binarize its input.
   BenoulliNB might perform better better on some datasets, especially those with shorter documents.
@@ -23,7 +20,11 @@ Multinomial Naive Bayes (MNB)
 Logistic Regression (LR)
   linear modell for classification rather than regression
   This implementation can fit binary, One-vs- Rest, or multinomial logistic regression with optional L2 or L1 regularization.
+  logit(pi)=ln(pi/1-pi)=alph+beta1x1,i+...+betakxk,i, i=1...n
+  pi=E(Y|Xi)=Pr(Yi=1)
+  pi=Pr(Yi=1|X)=1/1+e^(-(alph+beta1x1,i+...+betakxk,i))
 Stochastic Gradient Descent (SGD)
+  Stochastic gradient descent is a simple yet very efficient approach to fit linear models.
 Passive Aggressive Classifier (PAC)
 Support Vector Classifier (SVC)
 K-Nearest Neighbor (KNN)
