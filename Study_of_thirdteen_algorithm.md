@@ -21,6 +21,8 @@ Multinomial Naive Bayes (MNB)
    =p^48(1-p)^30[49(1-p)-31p]
    尤度を最大化するのは明らかにp=49/80
 Logistic Regression (LR)
+  linear modell for classification rather than regression
+  This implementation can fit binary, One-vs- Rest, or multinomial logistic regression with optional L2 or L1 regularization.
 Stochastic Gradient Descent (SGD)
 Passive Aggressive Classifier (PAC)
 Support Vector Classifier (SVC)
