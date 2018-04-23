@@ -50,10 +50,34 @@ Logistic Regression (LR)
 Stochastic Gradient Descent (SGD)
   
   Stochastic gradient descent is a simple yet very efficient approach to fit linear models.
+  
+  mean_squared_loss:Using the MSE loss makes sense if the assumption that your outputs are a real-valued function of your inputs, with a certain amount of irreducible Gaussian noise, with constant mean and variance. If these assumptions don’t hold true (such as in the context of classification), the MSE loss may not be the best bet.
+  
+  huber:二乗誤差損失よりも外れ値に敏感ではない
+  
+  cross-entropy:binary classification, and the cross-entropy loss provides us with faster learning when our predictions differ significantly from our labels, as is generally the case during the first several iterations of model training.
 
 Passive Aggressive Classifier (PAC)
+  
+  The passive-aggressive algorithms are a family of algorithms for large-scale learning. They are similar to the Perceptron in that they do not require a learning rate. However, contrary to the Perceptron, they include a regularization parameter C.For classification, PassiveAggressiveClassifier can be used with loss='hinge' (PA-I) or loss='squared_hinge' (PA-II). For regression, PassiveAggressiveRegressor can be used with loss='epsilon_insensitive' (PA-I) or loss='squared_epsilon_insensitive' (PA-II).
 
 Support Vector Classifier (SVC)
+  
+  The advantages of support vector machines are:
+
+  *Effective in high dimensional spaces.
+  
+  *Still effective in cases where number of dimensions is greater than the number of samples.
+  
+  *Uses a subset of training points in the decision function (called support vectors), so it is also memory efficient.
+
+  *Versatile: different Kernel functions can be specified for the decision function. Common kernels are provided, but it is also possible to specify custom kernels.
+
+  The disadvantages of support vector machines include:
+
+  *If the number of features is much greater than the number of samples, avoid over-fitting in choosing Kernel functions and regularization term is crucial.
+  
+  *SVMs do not directly provide probability estimates, these are calculated using an expensive five-fold cross-validation (see Scores and probabilities, below).
 
 K-Nearest Neighbor (KNN)
 
